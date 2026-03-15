@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — Event · Information Technology</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    Event <span class="brand-sub">&nbsp;·&nbsp;Information Technology</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link active" href="../events/index.html">Events</a>
+    <a class="nav-link" href="../register/index.html">Register</a>
+    <a class="nav-link" href="../participants/index.html">Participants</a>
+  </div>
+</nav>
+
+<div class="events-bg">
+  <div class="inner">
+
+    <div class="page-title">Activity</div>
+    <div class="page-sub">กิจกรรมทั้งหมดที่เปิดรับสมัคร</div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">กิจกรรมทั้งหมด</div>
+        <div class="stat-value" id="stat-total">—</div>
+        <div class="stat-sub">รายการ</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">ผู้ลงทะเบียน</div>
+        <div class="stat-value" id="stat-reg">—</div>
+        <div class="stat-sub">คนทั้งหมด</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">ที่นั่งว่างทั้งหมด</div>
+        <div class="stat-value" id="stat-left">—</div>
+        <div class="stat-sub">ที่นั่ง</div>
+      </div>
+    </div>
+
+    <div id="eventsList" class="loading">กำลังโหลด...</div>
+
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<!-- shared helpers ก่อน แล้วค่อย page script -->
+<script src="../../js/api.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

@@ -32,8 +32,8 @@ const registerEvent = async (req, res, next) => {
       return res.status(400).json({ success: false, message: 'กิจกรรมนี้เต็มแล้ว' });
     }
 
-    const gmail = await registerModel.checkGmail(email, events_id);
-    if (gmail) return res.status(400).json({ success: false, message: "อีเมลนี้ลงทะเบียนไปแล้ว" });
+    const isDuplicate = await registerModel.checkGmail(email, events_id);
+    if (isDuplicate) return res.status(400).json({ success: false, message: "อีเมลนี้ลงทะเบียนไปแล้ว" });
 
     await registerModel.register({ name, email, events_id });
 

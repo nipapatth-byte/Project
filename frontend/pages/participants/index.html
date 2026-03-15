@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participants — Event · Information Technology</title>
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="../events/index.html">
+    Event <span class="brand-sub">&nbsp;·&nbsp;Information Technology</span>
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="../events/index.html">Events</a>
+    <a class="nav-link" href="../register/index.html">Register</a>
+    <a class="nav-link active" href="../participants/index.html">Participants</a>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="page-title">Participants List</div>
+  <div class="page-sub">รายชื่อผู้ลงทะเบียนทั้งหมด</div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:52px">#</th>
+          <th>ชื่อ-นามสกุล</th>
+          <th>อีเมล</th>
+          <th>กิจกรรม</th>
+          <th style="width:80px"></th>
+        </tr>
+      </thead>
+      <tbody id="pTable"></tbody>
+    </table>
+    <div class="empty-state" id="emptyState" style="display:none">
+      <div class="empty-icon">📋</div>
+      <div>ยังไม่มีผู้ลงทะเบียน</div>
+    </div>
+    <div class="loading" id="loadingState">กำลังโหลด...</div>
+  </div>
+
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-title">ยืนยันการลบ</div>
+    <div class="modal-text" id="modalText"></div>
+    <div class="modal-actions">
+      <button class="btn-outline" onclick="closeModal()">ยกเลิก</button>
+      <button class="btn-danger"  id="modalConfirm">ลบ</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="../../js/api.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
