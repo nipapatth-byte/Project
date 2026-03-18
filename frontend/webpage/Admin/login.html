@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KukpsEvent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+
+</head>
+
+<body>
+    <div class="navmemu">
+        <div class="event-group">
+            <span class="event">INFORMATION TECHNOLOGY • </span>
+            <span class="event2">EVENT</span>
+        </div>
+        <div class="menu">
+            <a href="../Activity/index.html">Activity</a>
+            <a href="../Register/index.html">Register</a>
+            <a href="../Participants/index.html">Participants</a>
+            <a href="../Admin/login.html" class="admin"> Admin</a>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="flex form login">
+
+        <div class="admin-login">
+            <h1>LOGIN</h1>
+            <h2>เข้าสู่ระบบสำหรับผู้จัดกิจกรรม</h2>
+        </div>
+
+        <div class="card-containeradmin">
+
+            <div class="container-admin">
+
+                <div class="card-username">
+                    <div class="title-username">Username</div>
+                    <input type="text" class="input-textlogin" placeholder="Username">
+                </div>
+
+                <div class="card-password">
+                    <div class="title-password">Password</div>
+                    <input type="password" class="input-textlogin" placeholder="Password">
+                </div>   
+
+                <div class="submit">
+                    <button onclick="submitData()" class="submit-button">
+                        Login
+                    </button>
+                </div>
+
+                <div id="toast" class="toast-inline"></div>
+
+            </div>
+
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../../js/api.js"></script>
+        <script src="login.js"></script>
+</body>
+
+</html>

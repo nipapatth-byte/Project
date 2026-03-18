@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KukpsEvent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    
+</head>
+
+<body >
+    <div class="navmemu">
+        <div class="event-group">
+            <span class="event">INFORMATION TECHNOLOGY • </span>
+            <span class="event2">EVENT</span>
+        </div>
+        <div class="menu">
+            <a href="../Activity/index.html">Activity</a>
+            <a href="../Register/index.html" class="register">Register</a>
+            <a href="../Participants/index.html">Participants</a>
+            <a href="../Admin/index.html"> Admin</a>
+        </div>
+    </div>
+    <br><br>
+    <div class="form-wrapper">
+        <div class="register-title">
+            <h1>Register</h1>
+            <h2>กรุณากรอกข้อมูลเพื่อลงทะเบียน</h2>
+        </div>
+        <div class="card-containerregister">
+            <div class="container-register">
+                <div class="row">
+                    <div class="card-name">
+                        <div class="title-name">ชื่อ-นามสกุล</div>
+                        <input id="name" type="text" class="input-text" placeholder="เช่น นายพี เกรดดี">
+                    </div>
+                    <div class="card-email">
+                        <div class="title-email">อีเมล</div>
+                        <input id="email" type="text" class="input-text" placeholder="example@email.com">
+                    </div>
+                </div>
+                <br>
+                <div class="card-even">
+                    <div class="title-event">เลือกกิจกรรม</div>
+                    <select id="event-select" class="input-text">
+                        <option value="">-- กรุณาเลือกกิจกรรม --</option>
+                    </select>
+
+                </div>
+
+
+                <div class="submit">
+                    <button type="button" onclick="submitData()" class="submit-button">
+                        <span class="latter">submit</span>
+                    </button>
+                </div>
+                <div id="toast" class="toast-inline"></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

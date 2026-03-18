@@ -18,6 +18,7 @@ app.use(express.json());
 app.use('/api/events',require('./routes/events'));
 app.use('/api/register',require('./routes/register'));
 app.use('/api/participants',require('./routes/participants'));
+app.use('/api/admin',require('./routes/admin'));
 
 app.use(require("./middlewares/error")); 
 

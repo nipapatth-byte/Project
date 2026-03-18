@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KukpsEvent - Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <div class="navmemu">
+        <div class="event-group">
+            <span class="event">INFORMATION TECHNOLOGY • </span>
+            <span class="event2">EVENT</span>
+        </div>
+        <div class="menu">
+            <a href="../Activity/index.html">Activity</a>
+            <a href="../Register/index.html">Register</a>
+            <a href="../Participants/index.html">Participants</a>
+            <a href="../Admin/index.html" class="admin">Admin</a>
+            <button onclick="logout()" class="btn-logout">Logout</button>
+        </div>
+    </div>
+    <br><br>
+
+    <!-- ─── หัวข้อ + ปุ่มเพิ่ม ─── -->
+    <div class="admin-title">
+        <div>
+            <h1 class="admin-h1">Admin Dashboard</h1>
+            <h2 class="admin-h2">จัดการกิจกรรมและผู้สมัคร</h2>
+        </div>
+        <button class="btn-add" onclick="openAddModal()">+ เพิ่มกิจกรรม</button>
+    </div>
+
+    <!-- ─── ตารางกิจกรรม ─── -->
+    <div class="container-Participants" style="margin-bottom: 40px;">
+        <h3 class="section-title">📋 รายการกิจกรรม</h3>
+        <div id="event-table">
+            <div class="row-Participants-admin ">
+                <div>ชื่อกิจกรรม</div>
+                <div>สถานที่</div>
+                <div>วันที่</div>
+                <div>ที่นั่ง</div>
+                <div>จัดการ</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── ตารางผู้สมัคร ─── -->
+    <div class="container-Participants" style="margin-bottom: 60px;">
+        <h3 class="section-title">👥 รายชื่อผู้สมัคร</h3>
+        <div id="participant-table">
+            <div class="row-Participants row-header" style="grid-template-columns: 60px 1fr 1fr 1fr 80px;">
+                <div>ลำดับ</div>
+                <div>ชื่อ-นามสกุล</div>
+                <div>อีเมล</div>
+                <div>กิจกรรม</div>
+                <div>ลบ</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── Modal เพิ่ม/แก้ไขกิจกรรม ─── -->
+    <div id="modal-overlay" class="modal-overlay" style="display:none;">
+        <div class="modal-box">
+            <h2 class="modal-title" id="modal-title">เพิ่มกิจกรรม</h2>
+
+            <div class="card-name">
+                <div class="title-name">ชื่อกิจกรรม</div>
+                <input id="m-name" type="text" class="input-text" placeholder="เช่น Workshop AI">
+            </div>
+            <div class="card-name">
+                <div class="title-name">สถานที่</div>
+                <input id="m-location" type="text" class="input-text" placeholder="เช่น อาคาร KU">
+            </div>
+            <div class="card-name">
+                <div class="title-name">วันที่จัดกิจกรรม</div>
+                <input id="m-date" type="datetime-local" class="input-text">
+            </div>
+            <div class="card-name">
+                <div class="title-name">จำนวนที่นั่ง</div>
+                <input id="m-max" type="number" class="input-text" placeholder="เช่น 50">
+            </div>
+
+            <div id="modal-toast" class="toast-inline"></div>
+
+            <div style="display:flex; gap:12px; margin-top:24px; justify-content:center;">
+                <button class="submit-button" style="padding:10px 40px; margin-top:0;" onclick="saveEvent()">บันทึก</button>
+                <button class="btn-cancel" onclick="closeModal()">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
