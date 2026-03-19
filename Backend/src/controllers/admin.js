@@ -1,7 +1,7 @@
 require('dotenv').config();
 
-// Admin login — เช็คจาก .env ไม่ต้องมีตาราง DB
-// ตั้งค่าใน .env: ADMIN_USER=admin  ADMIN_PASS=1234
+//Admin login — เช็คจาก .env ไม่ต้องมีตาราง DB
+//ตั้งค่าใน .env: ADMIN_USER=admin  ADMIN_PASS=1234
 
 const login = (req,res) => {
     const {username,password} = req.body;
@@ -19,8 +19,8 @@ const login = (req,res) => {
             message: 'usernsme หรือ password ไม่ถูกต้อง'
         });
     }
-        // ส่ง token กลับ (ใช้ string ง่ายๆ — production ควรใช้ JWT)
-        const token = Buffer.from(`${username}:${Date.now()}`).toString('base64');
+        
+    const token = Buffer.from(`${username}:${Date.now()}`).toString('base64');
         res.json({
             success: true,
             message: 'เข้าสู่ระบบสำเร็จ',

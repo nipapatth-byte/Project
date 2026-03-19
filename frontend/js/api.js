@@ -4,7 +4,6 @@ const api = {
 
   events: {
     getAll: () => axios.get(`${BASE_URL}/api/events`),
-    getById: (id) => axios.get(`${BASE_URL}/api/events/${id}`),
     create: (data) => axios.post(`${BASE_URL}/api/events`, data),
     update: (id, data) => axios.put(`${BASE_URL}/api/events/${id}`, data),
     remove: (id) => axios.delete(`${BASE_URL}/api/events/${id}`)
@@ -12,7 +11,6 @@ const api = {
 
   participants: {
     getAll: () => axios.get(`${BASE_URL}/api/participants`),
-    create: (data) => axios.post(`${BASE_URL}/api/participants`, data),
     remove: (id) => axios.delete(`${BASE_URL}/api/participants/${id}`)
   },
 

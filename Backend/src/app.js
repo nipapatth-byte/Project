@@ -3,7 +3,7 @@ const cors = require('cors');
 const app = express();
 
 
-// Middlewares
+//อนุญาตให้ 3 origin เรียกใช้ API ได้
 app.use(cors({
   origin: [
     'http://127.0.0.1:5500',

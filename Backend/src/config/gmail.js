@@ -17,6 +17,6 @@ transporter.verify((err) => {
   if (err) console.error("❌ Email service failed to connect:", err.message);
   else     console.log("✅ Email service connected");
 });
- 
+
 module.exports = transporter;
  
