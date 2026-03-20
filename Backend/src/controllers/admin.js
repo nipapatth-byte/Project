@@ -16,7 +16,7 @@ const login = (req,res) => {
     if (username != process.env.ADMIN_USER || password != process.env.ADMIN_PASS) {
         return res.status(400).json({
             success: false,
-            message: 'usernsme หรือ password ไม่ถูกต้อง'
+            message: 'username หรือ password ไม่ถูกต้อง'
         });
     }
         

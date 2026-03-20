@@ -16,26 +16,7 @@ const getAll = async () => {
     JOIN events e ON e.events_id = p.events_id
     ORDER BY p.participant_id ASC
   `);
-  /** SELECT p.*, e.event_name, e.events_date, e.location
-FROM participants p
-JOIN events e ON e.events_id = p.events_id
-ORDER BY p.participant_id ASC แบบสั้น */
   return rows;
-};
-
-// ดึงผู้เข้าร่วมรายคน
-const getById = async (id) => {
-  const [rows] = await db.query(`
-    SELECT
-      p.*,
-      e.event_name,
-      e.events_date,
-      e.location
-    FROM participants p
-    JOIN events e ON e.events_id = p.events_id
-    WHERE p.participant_id = ?
-  `, [id]);
-  return rows[0];
 };
 
 // ลบผู้เข้าร่วม
@@ -46,4 +27,4 @@ const remove = async (id) => {
   return result;
 };
 
-module.exports = { getAll, getById, remove };
+module.exports = { getAll, remove };

@@ -1,4 +1,4 @@
-// login.js — Admin Login
+//Admin Login
 
 function showToast(message, type = 'error') {
     const toast = document.getElementById('toast')

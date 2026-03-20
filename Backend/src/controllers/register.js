@@ -9,7 +9,7 @@ const validateRegis = (data) => {
   if (!data.email) errors.push("กรุณากรอกอีเมล");
   if (!data.events_id) errors.push("กรุณาเลือกกิจกรรม");
 
-  //เช็ค รูปแบบ gmail
+  //เช็ค รูปแบบ nipapat@gmail.com
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (data.email && !emailRegex.test(data.email)) {
     errors.push("รูปแบบอีเมลไม่ถูกต้อง");
@@ -48,7 +48,7 @@ const registerEvent = async (req, res, next) => {
       });
     } catch (emailError) {
       console.error("⚠️ ส่งอีเมลไม่สำเร็จ:", emailError.message);
-      // ไม่ return error — การลงทะเบียนสำเร็จแล้ว แค่อีเมลมีปัญหา
+      // ไม่ return error การลงทะเบียนสำเร็จแล้ว แค่อีเมลมีปัญหา
     }
 
     res.status(201).json({

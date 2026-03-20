@@ -50,7 +50,11 @@
 
     <!-- ─── ตารางผู้สมัคร ─── -->
     <div class="container-Participants" style="margin-bottom: 60px;">
-        <h3 class="section-title">👥 รายชื่อผู้สมัคร</h3>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <h3 class="section-title">👥 รายชื่อผู้สมัคร</h3>
+            <input type="text" id="search-participant" class="search-input-admin" placeholder="ค้นหาผู้สมัคร..."
+                oninput="searchParticipantsAdmin()" style="margin:0;">
+        </div>
         <div id="participant-table">
             <div class="row-Participants row-header" style="grid-template-columns: 60px 1fr 1fr 1fr 80px;">
                 <div>ลำดับ</div>
@@ -77,7 +81,7 @@
             </div>
             <div class="card-name">
                 <div class="title-name">วันที่จัดกิจกรรม</div>
-                <input id="m-date" type="datetime-local" class="input-text">
+                <input id="m-date" type="date" class="input-text">
             </div>
             <div class="card-name">
                 <div class="title-name">จำนวนที่นั่ง</div>
@@ -87,7 +91,8 @@
             <div id="modal-toast" class="toast-inline"></div>
 
             <div style="display:flex; gap:12px; margin-top:24px; justify-content:center;">
-                <button class="submit-button" style="padding:10px 40px; margin-top:0;" onclick="saveEvent()">บันทึก</button>
+                <button class="submit-button" style="padding:10px 40px; margin-top:0;"
+                    onclick="saveEvent()">บันทึก</button>
                 <button class="btn-cancel" onclick="closeModal()">ยกเลิก</button>
             </div>
         </div>

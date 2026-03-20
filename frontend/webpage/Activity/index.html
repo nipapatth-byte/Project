@@ -31,6 +31,10 @@
             <h1>Activity</h1>
             <h2>รายการกิจกรรม</h2>
         </div>
+        <div class="search-wrap">
+            <input type="text" id="search-input" class="search-input" placeholder=" ค้นหากิจกรรม..."
+                oninput="searchEvents()">
+        </div>
     </div>
     <div class="card-containerActivity" id="event-list"></div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

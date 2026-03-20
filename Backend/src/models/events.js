@@ -30,7 +30,7 @@ const create = async (data) => {
   const [result] = await db.query('INSERT INTO events (event_name, location, events_date, max_participants) VALUES (?,?,?,?)',
   [event_name,location,events_date,max_participants]
   );
-  return result; //*เผื่อ error
+  return result; 
 };
 
 

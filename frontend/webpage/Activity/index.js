@@ -11,7 +11,6 @@ const loadEvents = async () => {
 
     const response = await api.events.getAll()
 
-    // ต้อง .data.data
     events = response.data.data
 
     let html = ''
@@ -59,4 +58,14 @@ const goRegister = (id) => {
   window.location.href =
     `../Register/index.html?eventId=${id}`
 
+}
+
+function searchEvents() {
+    const keyword = document.getElementById('search-input').value.toLowerCase()
+    const cards = document.querySelectorAll('.container')
+
+    cards.forEach(card => {
+        const text = card.textContent.toLowerCase()
+        card.style.display = text.includes(keyword) ? 'block' : 'none'
+    })
 }

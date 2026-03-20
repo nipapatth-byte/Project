@@ -2,6 +2,7 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config();
  
+//ตัวส่งจดหมาย 
 const transporter = nodemailer.createTransport({
   host:   process.env.SMTP_HOST || "smtp.gmail.com",
   port:   Number(process.env.SMTP_PORT) || 587,

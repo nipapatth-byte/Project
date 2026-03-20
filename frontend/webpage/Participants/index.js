@@ -1,5 +1,3 @@
-// index.js — Participants
-
 window.onload = async () => {
     await loadParticipants();
 };
@@ -11,7 +9,6 @@ const loadParticipants = async () => {
 
         const container = document.querySelector(".container-Participants");
 
-        // ลบ row เก่าออกก่อน (ถ้า reload)
         container.querySelectorAll(".row-data").forEach(r => r.remove());
 
         if (participants.length === 0) {
@@ -44,3 +41,13 @@ const loadParticipants = async () => {
         alert("ไม่สามารถโหลดรายชื่อผู้เข้าร่วมได้");
     }
 };
+
+function searchParticipants() {
+    const keyword = document.getElementById('search-input').value.toLowerCase()
+    const rows = document.querySelectorAll('.row-data')
+
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase()
+        row.style.display = text.includes(keyword) ? 'grid' : 'none'
+    })
+}

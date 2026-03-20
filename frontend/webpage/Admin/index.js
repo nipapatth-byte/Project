@@ -197,3 +197,13 @@ function logout() {
     localStorage.removeItem('admin')
     window.location.href = 'login.html'
 }
+
+function searchParticipantsAdmin() {
+    const keyword = document.getElementById('search-participant').value.toLowerCase()
+    const rows = document.querySelectorAll('#participant-table .row-data')
+
+    rows.forEach(row => {
+        const text = row.textContent.toLowerCase()
+        row.style.display = text.includes(keyword) ? 'grid' : 'none'
+    })
+}

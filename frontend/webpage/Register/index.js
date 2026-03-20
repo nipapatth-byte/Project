@@ -1,6 +1,3 @@
-// index.js — Register
-
-
 function showToast(message, type = "error") {
     const toast = document.getElementById("toast");
     toast.textContent = message;
@@ -41,7 +38,6 @@ async function loadEvents() {
         const res = await api.events.getAll();
         const select = document.getElementById("event-select");
 
-        // ดึง eventId จาก URL ถ้ามี (มาจากหน้า Activity)
         const params = new URLSearchParams(window.location.search);
         const preselectedId = params.get("eventId");
 
@@ -60,7 +56,6 @@ async function loadEvents() {
             select.appendChild(option);
         });
 
-        // เลือก event อัตโนมัติถ้ามาจากหน้า Activity
         if (preselectedId) {
             select.value = preselectedId;
         }
